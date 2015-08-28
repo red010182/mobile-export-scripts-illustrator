@@ -1,7 +1,7 @@
 Mobile Export Script for Illustrator
 =================================
 
-Script for exporting Illustrator artboards to Android and iOS PNG24 assets in the proper directory structure and scale types. 
+Script for exporting Illustrator artworks to Android and iOS PNG24 assets in the proper directory structure and scale types. 
 
 How To
 ---

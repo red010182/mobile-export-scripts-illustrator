@@ -75,7 +75,8 @@ function copyGroupItemsToNewDocument() {
         top = copyItem.geometricBounds[1]
         right = copyItem.geometricBounds[2]
         bottom = copyItem.geometricBounds[3]
-        newArtboard = newDoc.artboards.add([left-0.5,top+0.5,right+0.5,bottom-0.5])
+        var padding = 1
+        newArtboard = newDoc.artboards.add([left-padding,top+padding,right+padding,bottom-padding])
         // items[i].selected = false
         // copyItem.hasSelectedArtwork = true
         // newDoc.fitArtboardToSelectedArt(i)
@@ -94,27 +95,27 @@ function exportPngForMobile() {
     var androidExportOptions = [
         {
             name: "mdpi",
-            scaleFactor: 50,
-            type: "android"
-        },
-        {
-            name: "hdpi",
-            scaleFactor: 75,
-            type: "android"
-        },
-        {
-            name: "xhdpi",
             scaleFactor: 100,
             type: "android"
         },
         {
-            name: "xxhdpi",
+            name: "hdpi",
             scaleFactor: 150,
             type: "android"
         },
         {
-            name: "xxxhdpi",
+            name: "xhdpi",
             scaleFactor: 200,
+            type: "android"
+        },
+        {
+            name: "xxhdpi",
+            scaleFactor: 300,
+            type: "android"
+        },
+        {
+            name: "xxxhdpi",
+            scaleFactor: 400,
             type: "android"
         }
     ];
@@ -122,19 +123,19 @@ function exportPngForMobile() {
     var iosExportOptions = [
         {
             name: "",
-            scaleFactor: 100.0/2,
+            scaleFactor: 100.0,
             type: "ios"
         },
         {
             name: "@2x",
-            // scaleFactor: 100*1.17,
-            scaleFactor: 100.0,
+            scaleFactor: 200*1.17, // 375/320 = 1.17, for iPhone 6 @2x
+            // scaleFactor: 100.0,
             type: "ios"
         },
         {
             name: "@3x",
             // scaleFactor: 150*1.3,
-            scaleFactor: 100.0*2,
+            scaleFactor: 300.0,
             type: "ios"
         }
     ];
