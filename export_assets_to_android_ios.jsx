@@ -56,13 +56,13 @@ function copyGroupItemsToNewDocument() {
     };
     var newDoc = documents.add()
     var newArtboard = newDoc.artboards[0]
-    var padding = 20
+    var margin = 20
 
     newArtboard.artboardRect=newRect(0,0,items[0].width,items[0].height)
     var points = [[0,0]]
     var artb
     for (var i = 1; i < items.length; i++) {
-        var newPoint = [points[i-1][0] + items[i-1].width + padding,points[i-1][1]]
+        var newPoint = [points[i-1][0] + items[i-1].width + margin,points[i-1][1]]
         // newArtboard = newDoc.artboards.add(newRect(newPoint[0],newPoint[1],items[i].width,items[i].height));
         points.push(newPoint)
     }
@@ -129,12 +129,10 @@ function exportPngForMobile() {
         {
             name: "@2x",
             scaleFactor: 200*1.17, // 375/320 = 1.17, for iPhone 6 @2x
-            // scaleFactor: 100.0,
             type: "ios"
         },
         {
             name: "@3x",
-            // scaleFactor: 150*1.3,
             scaleFactor: 300.0,
             type: "ios"
         }
